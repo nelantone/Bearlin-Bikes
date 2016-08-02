@@ -1,3 +1,139 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*body background*/
+
+body {
+  position: relative;
+  background-size: 100% 100%;
+  background-repeat: repeat;
+  min-height: 100%;
+}
+
+body::after {
+  content: "";
+  background: url('http://www.berlinwelcomes.com/wp-content/uploads/2012/04/BerlinBikeShop.jpg') no-repeat center center;
+  background-size:cover;
+  opacity: 0.05;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  -webkit-filter: grayscale(1); /* Old WebKit */
+  filter: grayscale(1);
+}
+
+/*navigation bar*/
+
+.navbar-nav>li>a {
+  text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+ color: #c52d06;
+}
+
+.navbar-header {
+  width: 100%;
+}
+
+.navbar-brand {
+  padding: 10px 0px;
+}
+
+.navbar-default {
+  background-color: #f7f7f7;
+  border-color: black;
+  padding-left: 0;
+}
+
+.navbar-space {
+  margin-top: 53px
+}
+
+.navbar-brand#brand-text {
+  margin-left: 300px;
+}
+
+.txt-title {
+  margin-left: 0.5%;
+  letter-spacing:0.8em;
+  text-transform: uppercase;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  float: left;
+  text-align: right;
+  width: 60%;
+  text-transform: bold;
+}
+
+.dropdown-menu { min-width: 0px;}
+
+#logo:hover {
+  content:url('/assets/bike_bears_s3_b.png');
+  width: auto;
+  height: auto;
+  margin-bottom: -50px;
+}
+
+.navbar-default .navbar-brand {
+  color: #c52d06;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: darkcyan;
+  text-decoration: none;
+  font-variant: bold;
+  transition: color 600ms;
+  -webkit-transition: color 600ms;
+  font-style: bold;
+  letter-spacing:0.8em;
+}
+
+/*main section*/
+
+.main {
+  padding-top: 1%;
+  padding-left: 14%;
+  padding-right: 14%;
+  padding-bottom: 28%;
+}
+
+/*index*/
+.deals {
+/*  text-align: center;*/
+  padding: 30px 0;
+}
+
+.container {
+  padding-left: auto;
+}
+
+/* footer */
+.site-footer {
+  text-align: center;
+  padding: 15px 0;
+  opacity: 0.9;
+/*  background-image: url('/assets/bike_bears_bg_footer.png');
+  background-size: 100px;*/
+}
+
+
+/*contact*/
+
+.contact {
+ text-align: center;
+}
+
+.index {
+  text-align: center;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .txt-title {
+    width: 53%;
+  }
+}
