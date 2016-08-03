@@ -112,7 +112,7 @@ body::after {
 
 .main {
   padding-top: 1%;
-  padding-left: 14%;
+  padding-left: 16%;
   padding-right: 14%;
   padding-bottom: 28%;
 }
@@ -128,13 +128,24 @@ body::after {
   margin-left: 10px;
 }
 
+.big-bear-img {
+  content:url(image-path('big-bear.png'));
+  position: fixed;
+  margin-left: -240px;
+}
+
+.big-bear-img2 {
+  content:url(image-path('big-bear2.png'));
+  position: fixed;
+  margin-left: -242px;
+}
+
+
 /* footer */
 .site-footer {
   text-align: center;
   padding: 15px 0;
   opacity: 0.9;
-/*  background-image: url('/assets/bike_bears_bg_footer.png');
-  background-size: 100px;*/
 }
 
 
@@ -145,7 +156,13 @@ body::after {
 }
 
 .index {
+  border-left: 1%;
   text-align: center;
+}
+
+/* about */
+.about {
+  border-left: 1%;
 }
 
 @media (min-width: 768px) {
