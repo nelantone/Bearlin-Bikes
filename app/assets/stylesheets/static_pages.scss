@@ -34,6 +34,11 @@ body::after {
 
 .navbar-default .navbar-nav>li>a:hover {
  color: #c52d06;
+ background-color: #ccc;
+}
+
+.navbar-default .navbar-nav>li>a {
+  letter-spacing:0.5em;
 }
 
 .navbar-header {
@@ -65,8 +70,8 @@ body::after {
   padding-top: 15px;
   padding-bottom: 15px;
   float: left;
-  text-align: right;
-  width: 60%;
+  text-align: center;
+  width: 40%;
   text-transform: bold;
 }
 
@@ -77,6 +82,7 @@ body::after {
   width: auto;
   height: auto;
   margin-bottom: -50px;
+  background-color: transparent;
 }
 
 .navbar-default .navbar-brand {
@@ -84,13 +90,19 @@ body::after {
 }
 
 .navbar-default .navbar-brand:hover {
-  color: darkcyan;
+  color: black;
   text-decoration: none;
   font-variant: bold;
   transition: color 600ms;
   -webkit-transition: color 600ms;
   font-style: bold;
   letter-spacing:0.8em;
+  background-color: rgba(200,97,99,1);
+}
+
+.dropdown-menu {
+  text-transform: uppercase;
+  letter-spacing:0.4em
 }
 
 /*main section*/
