@@ -35,6 +35,8 @@ body::after {
 .navbar-default .navbar-nav>li>a:hover {
  color: #c52d06;
  background-color: #ccc;
+ transition: color 600ms;
+ -webkit-transition: color 600ms;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -79,7 +81,7 @@ body::after {
 .dropdown-menu { min-width: 0px;}
 
 #logo:hover {
-  content:url('/assets/bike_bears_s3_b.png');
+  content:url(image-path('bike_bears_s3_b.png'));
   width: auto;
   height: auto;
   margin-bottom: -50px;
