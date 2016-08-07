@@ -22,13 +22,18 @@
   </div>
 
   <div class="field">
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+  </div>
+
+  <div class="field">
     <%= f.label :image_url %>
     <%= f.text_field :image_url %>
   </div>
 
   <div class="field">
-    <%= f.label :color %>
-    <%= f.text_field :color %>
+    <%= f.label :price %>
+    <%= f.text_field :price, :value => (number_with_precision(f.object.price, :precision => 2) || 0) %>
   </div>
 
   <div class="actions">

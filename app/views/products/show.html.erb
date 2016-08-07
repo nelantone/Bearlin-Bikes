@@ -11,14 +11,20 @@
 </p>
 
 <p>
+  <strong>color:</strong>
+  <%= @product.color %>
+</p>
+
+<p>
   <strong>Image url:</strong>
   <%= image_tag( @product.image_url, class: "img-responsive") %>
 </p>
 
 <p>
-  <strong>color:</strong>
-  <%= @product.color %>
+  <strong>price:</strong>
+  <%= @product.price %>
 </p>
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
