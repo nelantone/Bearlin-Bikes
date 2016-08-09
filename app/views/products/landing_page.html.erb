@@ -4,5 +4,5 @@
 <h2>Welcome!</h2>
 <h4>We have new bikes in stock!</h>
 <section class="deals" >
-<%= image_tag("bike6.jpg", alt: "New Bike") %>
+<%= link_to image_tag(@featured_product.image_url, alt: "New Bike"), {action: 'index', controller: 'products'} %>
 </section>
