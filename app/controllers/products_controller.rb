@@ -62,7 +62,7 @@ class ProductsController < ApplicationController
   end
 
   def landing_page
-    @featured_product = Product.first
+    @featured_product = Product.last
   end
 
   private

@@ -2,27 +2,27 @@
 
 <p>
   <strong>Name:</strong>
-  <%#@order.name %>
+  <%= @order.product.name %>
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%#@order.description %>
+  <%= @order.product.description %>
 </p>
 
 <p>
   <strong>color:</strong>
-  <%#@order.color %>
+  <%= @order.product.color %>
 </p>
 
 <p>
   <strong>Image url:</strong>
-  <%#image_tag( @order.image_url, class: "img-responsive") %>
+  <%= image_tag( @order.product.image_url, class: "img-responsive") %>
 </p>
 
 <p>
   <strong>price:</strong>
-  <%#@order.price %>
+  <%= @order.product.price %>
 </p>
 
 

@@ -13,16 +13,16 @@
       <div class="grid">
         <% @orders.each do |order| %>
           <div class="col-sm-2 col-md-4">
-            <%= order.name %><br>
-            <%= order.description %><br>
-            <%= order.color %>
-            <% if order.image_url.nil? %>
+            <%= order.product.name %><br>
+            <%= order.product.description %><br>
+            <%= order.product.color %>
+            <% if order.product.image_url.nil? %>
               (no image)
             <% else %>
-            <%= image_tag(order.image_url, height: '20%', width: '35%') %>
+            <%= image_tag(order.product.image_url, height: '20%', width: '35%') %>
             <% end %>
             <br>
-            <%= order.price %> Eur.<br>
+            <%= order.product.price %> Eur.<br>
             <%= link_to 'Show details', order %>
             <%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %>
           </div> <!-- col-sm-2 col-md-4 -->
