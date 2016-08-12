@@ -3,6 +3,41 @@
 <div class="big-bear-img"></div>
 <h2>Welcome!</h2>
 <h4>We have new bikes in stock!</h>
-<section class="deals" >
-<%= link_to image_tag(@featured_product.image_url, alt: "New Bike"), {action: 'index', controller: 'products'} %>
-</section>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% if @products.count.nil? %>
+      Sorry we don't have bikes right now.
+      we are out of stock :S
+      Please come back in few days :)
+    <% else %>
+     <%= render partial: 'carousel' %>
+    <% end %>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <% @products.each do |featured_product| %>
+      <div class="item <%= " active" if featured_product == @products.first %> deal">
+        <%= link_to image_tag(featured_product.image_url, alt: "New Bike"), {action: 'index', controller: 'products'} %>
+        <div class="carousel-caption">
+          <%= featured_product.name   %>
+          <br>
+          <% if featured_product.price.present? %>
+            <%= 'for:' + featured_product.price.to_s + 'EUR' %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

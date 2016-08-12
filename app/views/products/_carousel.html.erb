@@ -1,0 +1,12 @@
+<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+<% case @products.count %>
+  <% when 0..2 %>
+    <% indicator_ary = (1..2).to_a %>
+  <% when 3..4 %>
+    <% indicator_ary = (1..(@products.count - 1)).to_a %>
+  <% else %>
+    <% indicator_ary = (1..4).to_a %>
+<% end %>
+<% indicator_ary.each do |indicator| %>
+  <li data-target="#carousel-example-generic" data-slide-to=<%= indicator.to_s %>></li>
+<% end %>

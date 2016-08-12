@@ -4,31 +4,13 @@
   <p id="notice"><%= notice %></p>
 
   <h2>Products</h2>
-
-  <p><h3> Soon you will find our products list! We are working on it</h3></p>
-
-  <div class="container">
-    <div class="grid">
-      <% @products.each do |product| %>
-        <div class="col-sm-2 col-md-4">
-          <%= product.name %><br>
-          <%= product.description %><br>
-          <%= product.color %>
-          <% if product.image_url.nil? %>
-            (no image)
-          <% else %>
-            <%= image_tag(product.image_url, class: "img-responsive img-rounded") %>
-          <% end %>
-          <br>
-          <%= product.price %> Eur.<br>
-          <%= link_to 'Show', product %>
-          <%= link_to 'Edit', edit_product_path(product) %>
-          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </div> <!-- col-sm-2 col-md-4 -->
-      <% end %>
-    </div><!-- row -->
-    <br><br>
-  </div><!-- container -->
+  <% if @products.nil? %>
+    <p><h3> Soon you will find our products list! We are working on it</h3></p>
+  <% else %>
+    <div class="container">
+      <%= render @products %>
+    </div><!-- container -->
+  <% end %>
   <br>
   <%= link_to 'New Product', new_product_path %>
 </section>
