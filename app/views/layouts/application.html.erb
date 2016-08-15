@@ -25,10 +25,10 @@
         <a class="txt-title navbar-brand" alt:"Home" href="/" title:"Home">Bearlin Bikes</a>
         <div id="navbar" class="collapse navbar-collapse navbar-right">
           <ul class="nav navbar-nav">
-            <li><a href="/products">Bikes</a></li>
-            <li><a href="/static_pages/about.html">About</a></li>
-            <li><a href="/static_pages/contact">Contact</a></li>
-            <li><a href="/orders">Order</a></li>
+            <li><%= link_to "Bikes", products_path %></li>
+            <li><%= link_to "About", static_pages_about_path %></li>
+            <li><%= link_to "Contact", static_pages_contact_path %></li>
+            <li><%= link_to "Oder", orders_path %></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div><!-- end navbar-reader -->
