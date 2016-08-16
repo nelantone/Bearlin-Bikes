@@ -178,6 +178,21 @@ body::after {
   .txt-title {
     width: 53%;
   }
+  .carousel-caption {
+    position: absolute;
+    width: 0;
+    margin-left: 0;
+    top: 2%;
+    left: 2%;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-family:Arial;
+    text-transform:uppercase;
+    font-weight:700;
+    letter-spacing:0em;
+    line-height:1.6;
+    font-size: 11px;
+  }
 }
 
 @media (max-width: 993px) {
