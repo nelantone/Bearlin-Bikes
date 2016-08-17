@@ -34,15 +34,6 @@ div.order {
   position: fixed;
 }
 
-input#search-input {
-  background-color: transparent;
-      border-left: 0;
-      border-right: 0;
-      border-top: 0;
-      border-bottom-color: #000;
-      font-style: italic;
-}
-
 .navbar-right.form-container {
   padding-top: 23px;
   position: fixed;
@@ -66,22 +57,6 @@ input#search-input {
    padding-right: 0;
    padding-left: 0;
  }
-/* .navbar-right.form-container {
-   padding-left: 26%;
-   border-left: 0%;
-   width: 90%;
-   position: fixed;
-   top: 12%;
-   left: 0;
-   z-index: 9999;
-   background-color: white;
- }
-
- section.main,
- section.index {
-    padding-top: 20%;
-    background-color: white;
- }*/
 }
 
 /*Change navbar-collapse break point */
