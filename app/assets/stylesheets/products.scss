@@ -28,3 +28,97 @@ table th,td {
 div.order {
   margin-left: 25%;
 }
+
+.form {
+  position: right;
+  position: fixed;
+}
+
+input#search-input {
+  background-color: transparent;
+      border-left: 0;
+      border-right: 0;
+      border-top: 0;
+      border-bottom-color: #000;
+      font-style: italic;
+}
+
+.navbar-right.form-container {
+  padding-top: 23px;
+  position: fixed;
+  padding-left: 82%;
+}
+
+@media (max-width: 993px) {
+  .navbar-right.form-container {
+    padding-left: 37%;
+    padding-top: 5%;
+    position: fixed;
+    padding-left: 77%;
+  }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+ .navbar-toggle {
+   margin-right: 0;
+ }
+ .container {
+   padding-right: 0;
+   padding-left: 0;
+ }
+/* .navbar-right.form-container {
+   padding-left: 26%;
+   border-left: 0%;
+   width: 90%;
+   position: fixed;
+   top: 12%;
+   left: 0;
+   z-index: 9999;
+   background-color: white;
+ }
+
+ section.main,
+ section.index {
+    padding-top: 20%;
+    background-color: white;
+ }*/
+}
+
+/*Change navbar-collapse break point */
+
+@media (max-width: 999px) {
+  .navbar-header {
+      float: none;
+  }
+  .navbar-left,.navbar-right {
+      float: none !important;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
+}

@@ -58,9 +58,9 @@ body::after {
   padding-left: 0;
 }
 
-.navbar-space {
+/*.navbar-space {
   margin-top: 53px
-}
+}*/
 
 .navbar-brand#brand-text {
   margin-left: 300px;
@@ -164,7 +164,7 @@ body::after {
   border-left: 1%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 917px) {
   .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
     margin-left: 0;
   }
@@ -195,10 +195,10 @@ body::after {
   }
 }
 
-@media (max-width: 993px) {
+@media (max-width: 999px) {
   .txt-title {
     width: 45%;
-    font-size: 15px;
+    font-size: 14px;
   }
   .navbar-nav {
     font-size: 13px;
@@ -206,5 +206,8 @@ body::after {
   .dropdown-menu {
     font-size: 10px;
     letter-spacing: 0.2em;
+  }
+  .form {
+    padding-right: 0px;
   }
 }

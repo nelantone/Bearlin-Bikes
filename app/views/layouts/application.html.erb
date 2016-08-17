@@ -28,12 +28,20 @@
             <li><%= link_to "Bikes", products_path %></li>
             <li><%= link_to "About", static_pages_about_path %></li>
             <li><%= link_to "Contact", static_pages_contact_path %></li>
-            <li><%= link_to "Oder", orders_path %></li>
+            <li><%= link_to "Order", orders_path %></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div><!-- end navbar-reader -->
     </div><!-- end container -->
   </nav><!-- navbar-fixed-top -->
+  <div class="navbar-right form-container">
+    <%= form_tag("/products", method: "get") do %>
+      <%= search_field_tag :q, nil, { id: 'search-input', placeholder: 'Search for...' } %>
+      <%= button_tag(type: "submit", class: "btn btn-secondary") do %>
+        <id = 'search-button'><i class="fa fa-search"></i></id>
+      <% end %>
+    <% end %>
+  </div>
   <section class="navbar-space"></section>
   <section class="main">
     <%= yield %>
