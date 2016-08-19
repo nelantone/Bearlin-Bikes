@@ -29,6 +29,14 @@
             <li><%= link_to "About", static_pages_about_path %></li>
             <li><%= link_to "Contact", static_pages_contact_path %></li>
             <li><%= link_to "Order", orders_path %></li>
+              <li>
+                <% if user_signed_in? %>
+                  <%= link_to icon('fa fa-sign-out', 'out'), destroy_user_session_path, :method => :delete %>
+                <% else %>
+                  <%= link_to icon('fa fa-sign-in', 'in'), new_user_session_path %>
+                <% end %>
+              </li>
+            </div>
           </ul>
         </div><!--/.nav-collapse -->
       </div><!-- end navbar-reader -->

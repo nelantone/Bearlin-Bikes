@@ -1,0 +1,22 @@
+<h2>Forgot your password?</h2>
+
+<div class="col-md-6">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+
+    <%= button_tag(type: "submit", class: "actions btn btn btn-info") do %>
+      <i class="fa fa-send"> </i> Send me reset password instructions
+    <% end %>
+  <% end %>
+  <br><br>
+  <%= render "devise/shared/links" %>
+</div>
+<div class="col-md-6">
+  <%= image_tag( 'bear_lost.png', class: "img-responsive navbar-fixed-bottom site-footer bear-size") %>
+</div>
+<br><br><br><br>

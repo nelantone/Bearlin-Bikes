@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
 
-before_action :set_order, only: [:show, :destroy]
+  before_filter :authenticate_user!
+  before_action :set_order, only: [:show, :destroy]
 
   def index
     @orders = Order.all

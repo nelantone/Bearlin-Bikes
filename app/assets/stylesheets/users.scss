@@ -1,0 +1,50 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.bear-size {
+  width: 40%;
+  height: auto;
+  margin-left: 60%;
+}
+
+input#inputEmail.form-control,
+input#inputPassword.form-control,
+input#user_email,
+input#user_password,
+input#user_password_confirmation {
+  background-color: transparent;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom-color: #000;
+    font-style: italic;
+    background-color: transparent;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #33a4b7;
+  border-color: #1c1b23;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #902828;
+    border-color: #204d74;
+}
+
+@media (min-width: 917px) {
+  .bear-size {
+    width: 35%;
+    height: auto;
+    margin-left: 55%;
+  }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .bear-size {
+    width: 40%;
+    height: auto;
+    margin-left: 20%;
+  }
+}
