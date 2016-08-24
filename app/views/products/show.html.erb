@@ -1,32 +1,45 @@
 <% if notice %>
     <p id="notice" class="alert alert-info"><%= notice %></p>
 <% end %>
-
 <p>
-  <strong>Name:</strong>
-  <%= @product.name %>
+  <strong><div class="txt-title"><%= @product.name %></div></strong>
 </p>
-
-<p>
+  <%= image_tag( @product.image_url, class: "img-responsive") %>
+<div class="col-sm-1 col-md-3 description">
   <strong>Description:</strong>
   <%= @product.description %>
-</p>
+</div>
 
-<p>
+<div class="col-sm-1 col-md-3 description">
   <strong>color:</strong>
   <%= @product.color %>
-</p>
+</div>
 
-<p>
-  <strong>Image url:</strong>
-  <%= image_tag( @product.image_url, class: "img-responsive") %>
-</p>
-
-<p>
+<div class="col-sm-1 col-md-3 description">
   <strong>price:</strong>
   <%= @product.price %>
-</p>
-
+</div>
+<br>
+<br>
+<br>
+<br>
+<% if @product.highest_rating_comment.nil? %>
+  Sorry, there are no comments about the product
+<% else %>
+  <strong><div class="secondary-title">Top rated comment:</div></strong><br>
+  Rating:
+  <%= @product.highest_rating_comment.rating %><br>
+  Comment: <br>
+  <%= @product.highest_rating_comment.body %><br>
+  <p></p>
+  <strong><div class="secondary-title">comments:</div></strong><br>
+  <% @product.rest_of_comments.map do |comment| %>
+    Rating:
+    <%= comment.rating %><br>
+    Comment: <br>
+    <%= comment.body %><br><br><br>
+  <% end %>
+<% end %>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

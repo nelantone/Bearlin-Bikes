@@ -2,12 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-table {
-  margin: 5%;
-}
 
-table th,td {
-  text-align: center;
+.secondary-title {
+  text-transform: uppercase;
 }
 
 .carousel-caption {
@@ -39,6 +36,8 @@ div.order {
   position: fixed;
   padding-left: 82%;
 }
+
+
 
 @media (max-width: 993px) {
   .navbar-right.form-container {
@@ -96,4 +95,30 @@ div.order {
   .collapse.in{
       display:block !important;
   }
+}
+
+.bg-comment {
+  position: relative;
+  background-size: 100% 100%;
+  background-repeat: repeat;
+  min-height: 100%;
+}
+
+.bg-comment::after {
+  content: "";
+  background: url('http://www.berlinwelcomes.com/wp-content/uploads/2012/04/BerlinBikeShop.jpg') no-repeat center center;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  -webkit-filter: grayscale(1); /* Old WebKit */
+  filter: grayscale(1);
+}
+
+.description {
+  background-color: grey;
+  color: white;
 }
