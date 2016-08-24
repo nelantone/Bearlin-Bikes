@@ -97,28 +97,17 @@ div.order {
   }
 }
 
-.bg-comment {
-  position: relative;
-  background-size: 100% 100%;
-  background-repeat: repeat;
-  min-height: 100%;
+.description {
+  background-color: #eaeaea;
 }
 
-.bg-comment::after {
-  content: "";
-  background: url('http://www.berlinwelcomes.com/wp-content/uploads/2012/04/BerlinBikeShop.jpg') no-repeat center center;
-  opacity: 0.1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-  -webkit-filter: grayscale(1); /* Old WebKit */
-  filter: grayscale(1);
+label[for=comment_rating],
+.rating {
+  padding-left: 3%;
 }
 
 .description {
-  background-color: grey;
-  color: white;
+  margin-bottom: 1px;
+  color:black;
+  min-width: 140px;
 }

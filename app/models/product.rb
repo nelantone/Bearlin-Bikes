@@ -9,4 +9,8 @@ class Product < ApplicationRecord
   def rest_of_comments
     comments.rating_desc.drop(1)
   end
+
+  def average_rating
+    comments.average(:rating).to_f
+  end
 end

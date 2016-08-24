@@ -167,13 +167,21 @@ body::after {
 input#search-input,
 input#name,
 input#email,
-textarea#message.form-control {
+input#comment_rating,
+textarea#message.form-control,
+textarea#comment_body {
   background-color: transparent;
     border-left: 0;
     border-right: 0;
     border-top: 0;
     border-bottom-color: #000;
     font-style: italic;
+}
+
+input#comment_rating,
+textarea#comment_body {
+  background-color:#eaeaea;
+  font-style: normal;
 }
 
 form.form-signin { padding-top: 30% }

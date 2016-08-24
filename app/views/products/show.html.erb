@@ -4,42 +4,61 @@
 <p>
   <strong><div class="txt-title"><%= @product.name %></div></strong>
 </p>
-  <%= image_tag( @product.image_url, class: "img-responsive") %>
-<div class="col-sm-1 col-md-3 description">
+<%= image_tag( @product.image_url, class: "img-responsive") %>
+<div class="col-sm-1 col-md-4 description rating-size">
+  Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div>
+</div>
+<div class="col-sm-2 col-md-4 description">
   <strong>Description:</strong>
   <%= @product.description %>
 </div>
 
-<div class="col-sm-1 col-md-3 description">
+<div class="col-sm-2 col-md-4 description">
   <strong>color:</strong>
-  <%= @product.color %>
+  <% if @product.color.present? %>
+    <%= @product.color %>
+  <% else %>
+    N/A
+  <% end %>
 </div>
 
-<div class="col-sm-1 col-md-3 description">
+<div class="col-sm-2 col-md-4 description">
   <strong>price:</strong>
   <%= @product.price %>
 </div>
+<div class="col-sm-2 col-md-4 description">
+  &nbsp;
+</div>
 <br>
 <br>
 <br>
+  <%= render partial: 'comments' %>
 <br>
 <% if @product.highest_rating_comment.nil? %>
-  Sorry, there are no comments about the product
+  Sorry, there are no comments about the product. <br>Be the first writing a review!
 <% else %>
-  <strong><div class="secondary-title">Top rated comment:</div></strong><br>
-  Rating:
-  <%= @product.highest_rating_comment.rating %><br>
-  Comment: <br>
-  <%= @product.highest_rating_comment.body %><br>
+  <div class="top-rated-comment">
+    <strong>
+      <p>
+        <div class="secondary-title product-reviews">Top rated comment:</div>
+        <%=  @product.highest_rating_comment.user.first_name %> <small><em><%= "#{time_ago_in_words( @product.highest_rating_comment.created_at)} ago" %></em></small>
+        <div class="rated" data-score="<%= @product.highest_rating_comment.rating %>"></div><br>
+        <%= @product.highest_rating_comment.body %>
+      </p>
+    </strong>
+  </div>
   <p></p>
-  <strong><div class="secondary-title">comments:</div></strong><br>
-  <% @product.rest_of_comments.map do |comment| %>
-    Rating:
-    <%= comment.rating %><br>
-    Comment: <br>
-    <%= comment.body %><br><br><br>
-  <% end %>
+  <div class="product-reviews">
+    <% @product.rest_of_comments.map do |comment| %>
+      <div class="row">
+        <hr>
+          <%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small><br>
+          <div class="rated" data-score="<%= comment.rating %>"></div><br>
+          <%= comment.body %>
+      </div>
+    <% end %>
+  </div>
 <% end %>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<br><br><br>
+<%= link_to icon('edit','Edit'), edit_product_path(@product), class: "btn btn-default" %>
+<%= link_to icon('back','Back'), products_path, class: "btn btn-default" %>

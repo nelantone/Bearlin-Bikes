@@ -1,0 +1,16 @@
+<% if signed_in? %>
+   <strong><div class="secondary-title">Add a review:</div></strong>
+  <%= form_for([@product, @product.comments.build]) do |f| %>
+    <p>
+      <%= f.label :body, "Comments" %>
+      <%= f.text_area :body %>
+    </p>
+    <%= f.label :rating %>
+    <div class="rating "></div>
+    <p>
+      <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+        <i class="fa fa-send"> </i> Submit
+      <% end %>
+    </p>
+  <% end %>
+<% end %>
