@@ -1,14 +1,18 @@
 <div class="col-sm-1 col-md-8">
-  <%= order.product.name %><br>
-  <%= order.product.description %><br>
-  <%= order.product.color %>
-  <% if order.product.image_url.nil? %>
-    (no image)
+  <% if order.product.nil? %>
+    <h2> Ups! There are still no orders</h2>
   <% else %>
-  <%= image_tag(order.product.image_url, height: '100%', width: '100%') %>
+    <%= order.product.name %><br>
+    <%= order.product.description %><br>
+    <%= order.product.color %><br>
+    <%= order.product.price %> Eur.<br>
+    <% if order.product.image_url.nil? %>
+      (no image)
+    <% else %>
+      <%= image_tag(order.product.image_url, height: '100%', width: '100%') %>
+    <% end %>
   <% end %>
   <br>
-  <%= order.product.price %> Eur.<br>
   <%= link_to 'Show details', order %>
   <%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %>
 </div> <!-- col-sm-2 col-md-4 -->
