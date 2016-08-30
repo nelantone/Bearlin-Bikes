@@ -42,6 +42,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  # Rspec for rails
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
@@ -63,4 +65,3 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #Add devise for Authentication
 gem 'devise'
-
