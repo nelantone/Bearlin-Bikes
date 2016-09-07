@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get 'static_pages/contact'
 
+  post 'payments/create'
+
   get '/products/:id', to: 'products#show'
 
   post 'static_pages/thank_you'
