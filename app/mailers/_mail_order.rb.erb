@@ -7,8 +7,8 @@
     <h1>Thank you for purchasing with us! </h1>
     <p>
       You have successfully order:
-      <%= "Bike: #{Product.find(@product).name}"  %>.<br>
-      <%= "Price: #{Product.find(@product).price.round(2)} Eur"  %>.<br>
+      <%= "Bike: #{@product.name}"  %>.<br>
+      <%= "Price: #{@product.price.round(2)} Eur"  %>.<br>
       Soon, you will recieve a Receipt.
     </p>
     <p>
