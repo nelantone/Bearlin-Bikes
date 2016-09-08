@@ -6,10 +6,11 @@
   <body>
     <h1>Thank you for purchasing with us! </h1>
     <p>
-      You have successfully order:
-      <%= "Bike: #{@product.name}"  %>.<br>
-      <%= "Price: #{@product.price.round(2)} Eur"  %>.<br>
-      Soon, you will recieve a Receipt.
+      Your order is begin processed
+      <% byebug %>
+      <%= "Bike: #{@product.name}" %>.<br>
+      <%= "Price: #{@product.price.round(2)} Eur" %>.<br>
+      Soon, you will recieve a purchase confirmation and your Receipt.
     </p>
     <p>
     </p>
