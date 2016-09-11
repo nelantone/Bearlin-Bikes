@@ -21,11 +21,6 @@
     N/A
   <% end %>
 </div>
-
-<div class="col-sm-2 col-md-4 description">
-  <strong>price:</strong>
-  <%= @product.price %>
-</div>
 <div class="col-sm-2 col-md-4 description">
   &nbsp;
 </div>
@@ -33,6 +28,9 @@
 <br>
 <br>
 <section class="center-items">
+  <%= form_tag "/payments/create" do %>
+    <%= render partial: "shared/stripe_checkout_button" %>
+  <% end %>
   <%= render partial: 'comments' %>
   <br>
   <% if @product.highest_rating_comment.nil? %>
@@ -54,8 +52,10 @@
         <div class="row">
           <hr>
             <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
-            <% if signed_in? && current_user.admin? || current_user.moderator? %>
-                <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% unless current_user.nil? %>
+              <% if signed_in? && (current_user.admin? || current_user.moderator?) %>
+                  <%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, product_comment_path(comment.product, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
             <% end %>
             <div class="rated" data-score="<%= comment.rating %>"></div><br>
             <%= comment.body %>
