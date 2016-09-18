@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe UsersController, :type => :controller do
 
-  let(:user) { User.create!(email: 'peter@example.com', password: '1234567890') }
-  let(:second_user) { User.create!(email:"second_usr@example.com", password:"123456") }
+  let(:user) { FactoryGirl.create(:user) }
+  let(:admin) { FactoryGirl.create(:admin) }
 
   describe 'GET #show' do
     context 'User is logged in' do
@@ -32,17 +32,18 @@ describe UsersController, :type => :controller do
 
     context ':second user logged can\'t access :user show page and it\'s root redirected ' do
       before do
-        sign_in second_user
+        sign_in admin
       end
 
-      it 'is :user NOT equal to second_user' do
-        get :show, params: { id: second_user.id }, session: { user_id: second_user.id }
+      it 'is :user NOT equal to admin' do
+        get :show, params: { id: admin.id }, session: { user_id: admin.id }
         expect(assigns(:user)).not_to eq user
       end
 
       it 'redirects to root_path' do
         get :show, params: { id: user.id }, session: { user_id: user.id }
         expect(response).to redirect_to(root_path)
+        expect(response).to have_http_status(302)
       end
 
     end
