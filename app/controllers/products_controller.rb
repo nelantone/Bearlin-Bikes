@@ -7,11 +7,9 @@ class ProductsController < ApplicationController
     if params[:q]
       search_term = params[:q]
       if Rails.env.production?
-        @products = Product.where("name ilike ?", "%#{search_term}%")
-        #Change ilike for Postgres to don't make it case sensitive
+        @products = Product.search_postgre_sql_non_case_sensnitive(search_term)
       else
-        @products = Product.where("name LIKE ?", "%#{search_term}%")
-        #for development and test cases.
+        @products = Product.search_for_development_and_test_cases(search_term)
       end
     else
       @products = Product.all
@@ -23,7 +21,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page])
+    @comments = Product.order_last_before(params)
   end
   # GET /products/new
   def new
