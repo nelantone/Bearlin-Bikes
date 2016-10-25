@@ -1,12 +1,15 @@
 <% cache product do %>
   <div class="col-sm-2 col-md-4">
     <br>
-    <%= product.name %><br>
-    <%= image_tag(product.image_url, class: "img-responsive img-rounded") %>
+    <%= link_to product.name, product %><br>
+    <%= link_to image_tag(product.image_url, class: "img-responsive img-rounded"), product %>
     <%= product.price %> Eur.<br>
-    <%= link_to 'Show', product %>
-    <%= link_to 'Edit', edit_product_path(product) %>
-    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% unless current_user.nil? %>
+      <% if product.user == current_user || current_user.admin? %>
+        <%= link_to icon('edit','Edit'), edit_product_path(product) %>
+        <%= link_to icon('remove','Destroy'), product, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    <% end %>
     <br>
   </div> <!-- col-sm-2 col-md-4 -->
 <% end %>

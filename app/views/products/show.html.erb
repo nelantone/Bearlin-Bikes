@@ -80,6 +80,11 @@
   </div>
 
   <br><br><br>
-  <%= link_to icon('edit','Edit'), edit_product_path(@product), class: "btn btn-default" %>
+  <% unless current_user.nil? %>
+    <% if @product.user == current_user || current_user.admin? %>
+      <%= link_to icon('edit','Edit'), edit_product_path(@product), class: "btn btn-default" %>
+      <%= link_to icon('remove','Destroy'), @product, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-default" %>
+    <% end %>
+  <% end %>
   <%= link_to icon('chevron-left','Back'), products_path, class: "btn btn-default" %>
 </section>

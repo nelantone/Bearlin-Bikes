@@ -6,6 +6,11 @@
   <% end %>
 
   <h2>Products</h2>
+  <% if current_user.nil? %>
+    <%= link_to icon('save', 'New Product'), new_product_path %>
+  <% else %>
+    <%= link_to icon('save', 'New Product'), new_product_path, class: "btn btn-default" %>
+  <% end %>
   <% if @products.nil? %>
     <p><h3> Soon you will find our products list! We are working on it</h3></p>
   <% else %>
@@ -16,5 +21,5 @@
     </div><!-- container -->
   <% end %>
   <br>
-  <%= link_to 'New Product', new_product_path %>
+  <%= link_to icon('save', 'New Product'), new_product_path, class: "btn btn-default" unless current_user.nil? %>
 </section>

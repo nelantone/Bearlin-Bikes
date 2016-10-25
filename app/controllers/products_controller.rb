@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show, :index, :landing_page]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
@@ -36,6 +37,11 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+
+    unless current_user.nil?
+      @product.user = current_user
+      @product.save
+    end
 
     respond_to do |format|
       if @product.save

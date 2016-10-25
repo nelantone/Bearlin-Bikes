@@ -37,7 +37,21 @@ div.order {
   padding-left: 82%;
 }
 
+/* edit and new product*/
+input#product_name,
+input#product_color,
+input#product_image_url,
+input#product_price,
+textarea#product_description {
+  background-color: transparent;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom-color: #000;
+    font-style: normal;
+}
 
+input#product_price { text-align: right; }
 
 @media (max-width: 993px) {
   .navbar-right.form-container {
